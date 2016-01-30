@@ -1,0 +1,4 @@
+db: dsfastaddydb
+server: 182.50.133.109:1433
+user: dsfastaddydbuser
+password: dsfastaddyuser!23@
