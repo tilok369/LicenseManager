@@ -1,0 +1,11 @@
+﻿<License>
+  <Id>5a356051-0529-40af-bce9-a0f259b8c7d1</Id>
+  <Type>Standard</Type>
+  <Expiration>Mon, 01 Feb 2016 17:01:30 GMT</Expiration>
+  <Quantity>5</Quantity>
+  <Customer>
+    <Name>asdf</Name>
+    <Email>sdf</Email>
+  </Customer>
+  <Signature>MEQCIH9haFraAtctISb/rE4GKBA4VWXTTDnoNif/QJPUauPUAiBu0f8uOpWZHUDmB+fiELFrihqXKop+Dys5kQZh9oJy/Q==</Signature>
+</License>

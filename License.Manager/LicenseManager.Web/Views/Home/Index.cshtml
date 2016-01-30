@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>License Manager</h1>
+    <p class="lead">Create License by entering your customer information</p>
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h2 style="text-align: center;">Customer Information</h2>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="c-name" class="col-sm-3 control-label">Name</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="c-name" placeholder="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="c-email" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="c-email" placeholder="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">License Key</label>
+                <div class="col-sm-9">
+                    <div id="c-key" class="alert alert-info" role="alert"></div>
+                    <div id="c-created" style="display: none;" class="alert alert-danger" role="alert"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button class="btn btn-primary" onclick="app.createLicense()">Get License</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

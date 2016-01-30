@@ -36,6 +36,7 @@
       <HintPath>..\packages\Portable.Licensing.1.1.0\lib\portable-net40+sl4+wp7+win8\Portable.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -82,6 +83,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\License.Manager.Db\License.Manager.Db.csproj">
+      <Project>{737306dd-58e4-4416-9c0b-d635be1b774f}</Project>
+      <Name>License.Manager.Db</Name>
+    </ProjectReference>
     <ProjectReference Include="..\License.Manager.Wrapper\License.Manager.Wrapper.csproj">
       <Project>{647fa081-87a1-4d0d-b573-eae7c725e32d}</Project>
       <Name>License.Manager.Wrapper</Name>

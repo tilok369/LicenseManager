@@ -18,10 +18,13 @@ namespace License.Manager.Wrapper
         public string PrivateKey { get; set; }
         public string PublicKey { get; set; }
 
-        public PortableLicense(string passPhrase)
+        public string LicKey
         {
-            _passPhrase = passPhrase;
-            CreateKey();
+            get
+            {
+                var keys = Guid.NewGuid().ToString().Split('-').Select(s => s.Substring(0, 4).ToUpper());
+                return string.Join("-", keys);
+            }
         }
 
         private void CreateKey()
@@ -32,12 +35,14 @@ namespace License.Manager.Wrapper
             PublicKey = keyPair.ToPublicKeyString();
         }
 
-        public void GenerateLicense(ProdCustomer customer, string path, int expireLimit)
+        public void GenerateLicense(ProdCustomer customer, string passPhrase, string path, int expireLimit)
         {
+            _passPhrase = passPhrase;
+            CreateKey();
             var license = Portable.Licensing.License.New()
                                  .WithUniqueIdentifier(Guid.NewGuid())
                                  .As(LicenseType.Standard)
-                                 .ExpiresAt(DateTime.Now.AddMinutes(expireLimit))
+                                 .ExpiresAt(DateTime.Now.AddDays(expireLimit))
                                  .WithMaximumUtilization(5)
                                  .LicensedTo(customer.Name, customer.Email)
                                  .CreateAndSignWithPrivateKey(PrivateKey, _passPhrase);

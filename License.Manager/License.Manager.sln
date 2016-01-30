@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "License.Manager.GUI", "Lice
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "License.Manager.Wrapper", "License.Manager.Wrapper\License.Manager.Wrapper.csproj", "{647FA081-87A1-4D0D-B573-EAE7C725E32D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "License.Manager.Db", "License.Manager.Db\License.Manager.Db.csproj", "{737306DD-58E4-4416-9C0B-D635BE1B774F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicenseManager.Web", "LicenseManager.Web\LicenseManager.Web.csproj", "{32A13C48-FBC9-41EC-96C7-00ABF6F318AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{647FA081-87A1-4D0D-B573-EAE7C725E32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{647FA081-87A1-4D0D-B573-EAE7C725E32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{647FA081-87A1-4D0D-B573-EAE7C725E32D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737306DD-58E4-4416-9C0B-D635BE1B774F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737306DD-58E4-4416-9C0B-D635BE1B774F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737306DD-58E4-4416-9C0B-D635BE1B774F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737306DD-58E4-4416-9C0B-D635BE1B774F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32A13C48-FBC9-41EC-96C7-00ABF6F318AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A13C48-FBC9-41EC-96C7-00ABF6F318AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A13C48-FBC9-41EC-96C7-00ABF6F318AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A13C48-FBC9-41EC-96C7-00ABF6F318AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
