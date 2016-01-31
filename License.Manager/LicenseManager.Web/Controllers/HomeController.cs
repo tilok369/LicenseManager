@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using License.Manager.Db;
@@ -38,16 +39,16 @@ namespace LicenseManager.Web.Controllers
             var connString = ConfigurationManager.ConnectionStrings["LicDbConn"].ConnectionString;
             var portableLicense = new PortableLicense();
             var licFile = "license_" + Guid.NewGuid().ToString().Substring(0, 10).Replace("-", "") +".lic";
-            if (!Directory.Exists(Server.MapPath("~/Licenses")))
-                Directory.CreateDirectory(Server.MapPath("~/Licenses"));
-            portableLicense.GenerateLicense(new ProdCustomer { Email = email, Name = name },
+            //if (!Directory.Exists(Server.MapPath("~/Licenses")))
+            //    Directory.CreateDirectory(Server.MapPath("~/Licenses"));
+            var license = portableLicense.GenerateLicense(new ProdCustomer { Email = email, Name = name },
                 Guid.NewGuid().ToString().Substring(0, 8), Path.Combine(Server.MapPath("~/Licenses"), licFile), 3);
-            var file = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Licenses"), licFile));
+            //var file = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Licenses"), licFile));
             var db = new DbUtility(connString);
             var key = portableLicense.LicKey;
             var saved = db.SaveLicense(new LicenseModel
             {
-                LicFile = file,
+                LicFile = Encoding.UTF8.GetBytes(license.ToString()),
                 LicId = key,
                 PublicKey = portableLicense.PublicKey,
                 Company = name,
@@ -55,7 +56,7 @@ namespace LicenseManager.Web.Controllers
             });
             if (saved)
             {
-                System.IO.File.Delete(Path.Combine(Server.MapPath("~/Licenses"), licFile));
+                //System.IO.File.Delete(Path.Combine(Server.MapPath("~/Licenses"), licFile));
                 return Json(new {Success = true, Key = key});
             }
             else

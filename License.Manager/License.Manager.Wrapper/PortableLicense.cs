@@ -35,19 +35,20 @@ namespace License.Manager.Wrapper
             PublicKey = keyPair.ToPublicKeyString();
         }
 
-        public void GenerateLicense(ProdCustomer customer, string passPhrase, string path, int expireLimit)
+        public Portable.Licensing.License GenerateLicense(ProdCustomer customer, string passPhrase, string path, int expireLimit)
         {
             _passPhrase = passPhrase;
             CreateKey();
             var license = Portable.Licensing.License.New()
                                  .WithUniqueIdentifier(Guid.NewGuid())
                                  .As(LicenseType.Standard)
-                                 .ExpiresAt(DateTime.Now.AddMinutes(expireLimit))
+                                 .ExpiresAt(DateTime.Now.AddDays(expireLimit))
                                  .WithMaximumUtilization(5)
                                  .LicensedTo(customer.Name, customer.Email)
                                  .CreateAndSignWithPrivateKey(PrivateKey, _passPhrase);
 
-            File.WriteAllText(path, license.ToString(), Encoding.UTF8);
+            //File.WriteAllText(path, license.ToString(), Encoding.UTF8);
+            return license;
         }
 
         public bool ValidateLicense(string path, string publicKey, out string validationMessage)
