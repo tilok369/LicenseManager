@@ -42,7 +42,7 @@ namespace License.Manager.Wrapper
             var license = Portable.Licensing.License.New()
                                  .WithUniqueIdentifier(Guid.NewGuid())
                                  .As(LicenseType.Standard)
-                                 .ExpiresAt(DateTime.Now.AddDays(expireLimit))
+                                 .ExpiresAt(DateTime.Now.AddMinutes(expireLimit))
                                  .WithMaximumUtilization(5)
                                  .LicensedTo(customer.Name, customer.Email)
                                  .CreateAndSignWithPrivateKey(PrivateKey, _passPhrase);

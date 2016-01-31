@@ -38,8 +38,10 @@ namespace LicenseManager.Web.Controllers
             var connString = ConfigurationManager.ConnectionStrings["LicDbConn"].ConnectionString;
             var portableLicense = new PortableLicense();
             var licFile = "license_" + Guid.NewGuid().ToString().Substring(0, 10).Replace("-", "") +".lic";
+            if (!Directory.Exists(Server.MapPath("~/Licenses")))
+                Directory.CreateDirectory(Server.MapPath("~/Licenses"));
             portableLicense.GenerateLicense(new ProdCustomer { Email = email, Name = name },
-                Guid.NewGuid().ToString().Substring(0, 8), Path.Combine(Server.MapPath("~/Licenses"), licFile), 2);
+                Guid.NewGuid().ToString().Substring(0, 8), Path.Combine(Server.MapPath("~/Licenses"), licFile), 3);
             var file = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Licenses"), licFile));
             var db = new DbUtility(connString);
             var key = portableLicense.LicKey;
@@ -47,7 +49,9 @@ namespace LicenseManager.Web.Controllers
             {
                 LicFile = file,
                 LicId = key,
-                PublicKey = portableLicense.PublicKey
+                PublicKey = portableLicense.PublicKey,
+                Company = name,
+                Email = email
             });
             if (saved)
             {

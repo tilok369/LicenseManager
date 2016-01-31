@@ -28,6 +28,8 @@ namespace License.Manager.Db
                     sqlCmd.Parameters.Add("licId", SqlDbType.NVarChar).Value = license.LicId;
                     sqlCmd.Parameters.Add("publicKey", SqlDbType.NVarChar).Value = license.PublicKey;
                     sqlCmd.Parameters.Add("licFile", SqlDbType.VarBinary).Value = license.LicFile;
+                    sqlCmd.Parameters.Add("company", SqlDbType.NVarChar).Value = license.Company;
+                    sqlCmd.Parameters.Add("email", SqlDbType.NVarChar).Value = license.Email;
                     connection.Open();
                     sqlCmd.ExecuteNonQuery();
                 }
@@ -58,6 +60,8 @@ namespace License.Manager.Db
                                 LicId = reader["LicId"] == null ? string.Empty : reader["LicId"].ToString(),
                                 PublicKey = reader["PublicKey"] == null ? string.Empty : reader["PublicKey"].ToString(),
                                 LicFile = reader["LicFile"] == null ? new byte[1] : (byte[]) reader["LicFile"],
+                                Company = reader["Company"] == null ? string.Empty : reader["Company"].ToString(),
+                                Email = reader["Email"] == null ? string.Empty : reader["Email"].ToString()
                             };
                             return license;
                         }

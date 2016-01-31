@@ -1,0 +1,11 @@
+﻿<License>
+  <Id>99d863e0-53b3-4f8b-9ec0-31bf1a3b7df6</Id>
+  <Type>Standard</Type>
+  <Expiration>Tue, 02 Feb 2016 14:04:26 GMT</Expiration>
+  <Quantity>5</Quantity>
+  <Customer>
+    <Name>Tilok</Name>
+    <Email>tbh.tilok@gmail.com</Email>
+  </Customer>
+  <Signature>MEYCIQCjhoXNThbHhWSjBc7MY8c2B/hg3mhesoS1Q8hhAonWrAIhAOVBElbavxp2FBK8lNvNX0//90LUFtNkYd/BuFaqkbvh</Signature>
+</License>

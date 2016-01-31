@@ -1,0 +1,11 @@
+﻿<License>
+  <Id>51b1e8b9-d2bb-43b4-ab5d-89b6bbb68db8</Id>
+  <Type>Standard</Type>
+  <Expiration>Tue, 02 Feb 2016 14:07:06 GMT</Expiration>
+  <Quantity>5</Quantity>
+  <Customer>
+    <Name>Tanjeer</Name>
+    <Email>tbh.tilok@live.com</Email>
+  </Customer>
+  <Signature>MEYCIQDYzM2XmeVWHt90uiuAjjYMSY+fpP2U00EP/HvwJsGn/gIhAOzod1LA3agqp51SfdCp52g9McwXRp1+7G4QXgpw9UxI</Signature>
+</License>
