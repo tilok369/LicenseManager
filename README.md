@@ -1,29 +1,15 @@
-# README #
+# License Manager #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
 ### What is this repository for? ###
+License Manager is a library wrapper on top of Portable Lincese .NET library
+to creat, validate and manage licenses.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### How to use? ###
+It has two sample application for testing purpose.
+One is a web application and another is desktop based.
+Please check those application for use details.
 
-### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+### Help needed? ###
+Please contact me on www.tanjeer.com for any kind of query or confusion.
